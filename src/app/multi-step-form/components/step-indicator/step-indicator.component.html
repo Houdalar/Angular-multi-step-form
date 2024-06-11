@@ -1,0 +1,7 @@
+<div class="row">
+    <div [ngClass]="{'circle': true, 'active': isActive, 'inactive': !isActive}">{{ stepNumber }}</div>
+    <div class="col d-none d-md-block">
+        <div class="Step-label">STEP {{stepNumber}}</div>
+        <div class="Step-description">{{stepDesc}}</div>
+    </div>
+</div>

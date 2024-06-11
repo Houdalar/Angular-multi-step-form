@@ -1,0 +1,20 @@
+<div>
+    <div class="row">
+        <div class="side-bar">
+            <div *ngFor="let step of steps">
+                <app-step-indicator 
+                  [stepNumber]="step.number" 
+                  [stepDesc]="step.desc" 
+                  [isActive]="activeStep === step.number">
+                </app-step-indicator>
+        </div>
+        <div class="column form-container">
+            <form >     
+            </form>
+            <div class="navigation">
+                <button class="progress">Next step</button>
+                <button class="progress">Go Back</button>
+            </div>
+          </div>
+    </div>  
+</div>

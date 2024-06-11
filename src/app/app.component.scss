@@ -1,0 +1,25 @@
+
+@import '../shared/appColors.scss';
+.container {
+    width: 100vw;
+    height: 100vh;
+    justify-content: flex-start;
+  }
+  
+
+  footer {
+    position: relative;
+    bottom: -1rem;
+    width: 100%;
+    margin: .25rem auto;
+    background-color: $White;
+  }
+
+  .attribution {
+    font-size: .75rem;
+    text-align: center;
+  }
+
+  .attribution a {
+    color: $Purplish-blue;
+  }

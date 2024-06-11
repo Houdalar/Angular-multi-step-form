@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import './shared/appColors.scss';
+@import'../node_modules/bootstrap/dist/css/bootstrap-reboot.min.css';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $global-font;
+  font-size: 16px;
+  background-color: $Magnolia;
+  width: 100vw;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: $Purplish-blue;
+}
