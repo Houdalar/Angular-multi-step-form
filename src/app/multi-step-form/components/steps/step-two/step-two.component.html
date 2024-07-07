@@ -1,1 +1,31 @@
-<p>step-two works!</p>
+<fieldset [formGroupName]="controlKey" class="form-col">
+    <p class="form-title">Select your plan</p>
+    <p class="form-subtitle">You have the option of monthly or yearly billing.</p>
+    <div class="plan-card" *ngFor="let plan of plans">
+        <input type="radio" [value]="plan.id" formControlName="selectedPlan" [id]="plan.id" hidden>
+        <label [for]="plan.id" class="plan-label">
+            <div class="plan-icon-container">
+                <!-- Placeholder for icon, you can use <img> or any other method to insert icon -->
+                <img src="{{ plan.icon }}" alt="{{ plan.name }}">
+            </div>
+            <div class="plan-details">
+                <span class="plan-name">{{ plan.name }}</span>
+                <span class="plan-price" *ngIf="billingType === 'Yearly'">{{ plan.yearly }}</span>
+                <span class="plan-price" *ngIf="billingType === 'Monthly'">{{ plan.monthly }}</span>
+                <small *ngIf="billingType === 'Yearly'" class="plan-perks">{{ plan.perks }}</small>
+            </div>
+        </label>
+    </div>
+    <div class="custom-toggle">
+        <span class="billing-label" [class.text-muted]="isYearly">Monthly</span>
+        <div>
+          <input type="checkbox" id="billing-cycle-toggle" class="toggle-checkbox" hidden formControlName="billingCycleControl">
+          <label for="billing-cycle-toggle" class="toggle-track">
+            <span class="toggle-thumb"></span>
+          </label>
+        </div>
+        <span class="billing-label" [class.text-muted]="!isYearly">Yearly</span>
+      </div>
+    
+
+</fieldset>

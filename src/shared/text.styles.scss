@@ -1,5 +1,12 @@
 @import './appColors.scss';
 
+.form-col {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 .form-title {
     color: $Marine-blue;
     font-size: x-large;
