@@ -1,25 +1,79 @@
-
 @import '../shared/appColors.scss';
-.container {
-    width: 100vw;
-    height: 100vh;
-    justify-content: flex-start;
-  }
-  
+@import '../../node_modules/bootstrap/scss/bootstrap.scss';
+@import '../shared/appMixins.scss';
 
-  footer {
-    position: relative;
-    bottom: -1rem;
-    width: 100%;
-    margin: .25rem auto;
-    background-color: $White;
-  }
+.main-layout {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
 
-  .attribution {
-    font-size: .75rem;
-    text-align: center;
+  @include media-breakpoint-up(md) {
+    flex-direction: row;
   }
+}
 
-  .attribution a {
-    color: $Purplish-blue;
+.side-bar {
+  background-image: url("/assets/images/bg-sidebar-mobile.svg");
+  background-size: cover;
+  padding: 2rem;
+  @include flexCenter(row);
+  background-position: center center;
+  height: 180px;
+  align-items: start;
+  gap: 0.5rem;
+
+  @include media-breakpoint-up(md) {
+    flex-direction: column;
+    align-items: start;
+    width: 20%;
+    height: 100%;
+    background-image: url("/assets/images/bg-sidebar-desktop.svg");
   }
+}
+
+.form-container {
+  flex-grow: 1; // Takes the remaining space
+  // background-color: $White;
+  border-radius: 15px;
+  padding: 15px;
+
+  @include media-breakpoint-up(md) {
+    margin-left: 1rem; // Adds margin between sidebar and form on desktop
+  }
+}
+
+footer {
+  // background-color: $White;
+  position: relative;
+  bottom: 0;
+  text-align: center;
+  padding: 0.5rem 0;
+  height: 10%;
+
+
+  .navigation {
+    background: $White;
+    padding: 1rem;
+    @include flexSpaceBetween(row);
+
+  }
+}
+
+.attribution a {
+  color: $Purplish-blue;
+}
+
+.next-button,
+.back-button {
+  color: $White;
+  background-color: $Marine-blue;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 5px;
+  height: auto;
+}
+
+.back-button {
+  color: $Cool-gray;
+  background-color: transparent;
+}

@@ -2,6 +2,15 @@
 @import '../../../../../node_modules/bootstrap/scss/bootstrap.scss';
 @import '../../../../shared/appMixins.scss';
 
+.step-indicator {
+    align-items: center;
+    display: flex;
+    flex-direction: row; 
+    @include media-breakpoint-up(md) {
+        flex-direction: column; 
+    }
+}
+
 .circle {
     width: 40px;
     height: 40px;
@@ -10,19 +19,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem; 
+    font-size: 1.25rem;
     font-weight: bold;
+    margin-right: 10px;
 
-    &.active{
-        background-color:$Light-blue; 
+    &.active {
+        background-color: $Light-blue;
         color: $Marine-blue;
-        
     }
-    &.inactive{
+
+    &.inactive {
         background-color: transparent;
         border: 2px solid $White;
     }
+}
 
-   
-  }
+.Step-label,
+.Step-description {
+    @include media-breakpoint-down(md) {
+        display: none;
 
+    }
+}

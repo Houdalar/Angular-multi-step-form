@@ -5,6 +5,13 @@
     flex-direction: $direction;
   }
 
+  @mixin flexStart($direction) {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: $direction;
+  }
+
   @mixin flexColStart() {
     display: flex;
     align-items: start;
@@ -12,9 +19,11 @@
     flex-direction: column;
   }
 
-  @mixin flexSpaceBetween($direction) {
+  @mixin flexSpaceBetween($direction , $align-item: center) {
     display: flex;
-    align-items: center;
+    align-items: $align-item;
     justify-content: space-between;
     flex-direction: $direction;
   }
+
+

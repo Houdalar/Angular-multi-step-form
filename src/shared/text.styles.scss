@@ -1,0 +1,25 @@
+@import './appColors.scss';
+
+.form-title {
+    color: $Marine-blue;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.form-subtitle {
+    color: $Cool-gray;
+    font-size: medium;
+    margin-top: -5px;
+    margin-bottom: 30px;
+}
+
+.input-field__title{
+    color: $Marine-blue;
+    font-size: medium;
+}
+
+.input-field__helper-message{
+    color: $Strawberry-red;
+    font-size: medium;
+}
+

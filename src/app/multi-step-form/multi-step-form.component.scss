@@ -1,25 +1,17 @@
 @import '../../shared/appMixins.scss';
 @import '../../../node_modules/bootstrap/scss/bootstrap.scss';
 @import '../../shared/appColors.scss';
-.side-bar{
-@include flexCenter(row);
-background-image: url("/assets/images/bg-sidebar-mobile.svg") ;
-background-size: cover;
-gap:2rem;
-height: 11rem;
-@include media-breakpoint-up(md) {
-    flex-direction: column;
-    align-items: start;
-    background-image: url("/assets/images/bg-sidebar-desktop.svg") ;
-    height: 100%;
-     
-  }
+
+.main-layout{
+  @include flexCenter(column);
 }
 
-
 .form-container{
-    display: block;
+    position: relative;
     background-color: $White;
     border-radius: 15px;
     padding: 15px;
+    margin: 20px;
+    z-index: 2;
+    top: -110px;
 }

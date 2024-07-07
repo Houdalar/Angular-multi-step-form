@@ -1,1 +1,13 @@
-<p>step-one works!</p>
+<fieldset [formGroupName]="controlKey" class="form-col">
+    <p class="form-title">Personal info</p>
+    <p class="form-subtitle">Please provide your name, email address, and phone number.</p>
+    <div class="input-group" *ngFor="let field of ['name', 'email', 'phone']; let i = index">
+        <div class="input-group__label-row">
+            <label class="input-field__title" [for]="field">{{ fieldLabels[i] }}</label>
+            <label *ngIf="getErrorMessage(field)" class="input-field__helper-message">{{ getErrorMessage(field)
+                }}</label>
+        </div>
+        <input class="input-field" [formControlName]="field" [id]="field" type="text" [placeholder]="placeholders[i]"
+            [ngClass]="{'invalid-touched': shouldShowError(field)}">
+    </div>
+</fieldset>

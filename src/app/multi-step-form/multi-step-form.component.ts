@@ -1,32 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { StepIndicatorComponent } from './components/step-indicator/step-indicator.component';
+import { StepOneComponent } from './components/steps/step-one/step-one.component';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-multi-step-form',
   standalone: true,
-  imports: [StepIndicatorComponent, CommonModule],
+  imports: [CommonModule, StepOneComponent, ReactiveFormsModule],
   templateUrl: './multi-step-form.component.html',
   styleUrl: './multi-step-form.component.scss'
 })
 export class MultiStepFormComponent {
-  steps = [
-    { number: 1, desc: 'Your Info' },
-    { number: 2, desc: 'Select Plan' },
-    { number: 3, desc: 'Add-ons' },
-    { number: 4, desc: 'Summary' }
-  ];
-  activeStep: number = 1;
-
-  nextStep() {
-    if (this.activeStep < this.steps.length) {
-      this.activeStep++;
-    }
-  }
-
-  previousStep() {
-    if (this.activeStep > 1) {
-      this.activeStep--;
-    }
+  form = new FormGroup({});
+  submit() {
+    console.log(this.form.value);
+    this.form.reset();
   }
 }
