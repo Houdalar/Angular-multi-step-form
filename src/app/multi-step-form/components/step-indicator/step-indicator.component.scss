@@ -5,22 +5,23 @@
 .step-indicator {
     align-items: center;
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
+
     @include media-breakpoint-up(md) {
-        flex-direction: column; 
+        flex-direction: column;
     }
 }
 
 .circle {
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     color: $White;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 0.8rem;
+    font-weight: normal;
     margin-right: 10px;
 
     &.active {
@@ -36,8 +37,19 @@
 
 .Step-label,
 .Step-description {
+    font-size: 0.8rem;
     @include media-breakpoint-down(md) {
         display: none;
 
     }
+}
+
+.Step-label {
+    color: $Cool-gray;
+  
+}
+
+.Step-description {
+    color: $White;
+    font-weight:500;
 }

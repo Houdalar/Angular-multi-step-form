@@ -14,4 +14,10 @@
     margin: 20px;
     z-index: 2;
     top: -110px;
+
+    @include media-breakpoint-up(md) {
+      top: 0;
+      z-index: 0;
+      
+    }
 }

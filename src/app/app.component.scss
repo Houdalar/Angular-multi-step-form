@@ -4,11 +4,31 @@
 
 .main-layout {
   display: flex;
-  flex: 1;
   flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+
 
   @include media-breakpoint-up(md) {
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.form-layout {
+
+
+
+
+  @include media-breakpoint-up(md) {
+    display: flex;
+    background: $White;
+    gap: 2rem;
+    border-radius: 15px;
+    width: max-content;
+    padding: 15px;
+
+
   }
 }
 
@@ -25,38 +45,33 @@
   @include media-breakpoint-up(md) {
     flex-direction: column;
     align-items: start;
-    width: 20%;
+    justify-content: start;
+    gap: 1.5rem;
+    width: 30%;
     height: 100%;
     background-image: url("/assets/images/bg-sidebar-desktop.svg");
+    border-radius: 10px;
   }
 }
 
 .form-container {
-  flex-grow: 1; // Takes the remaining space
-  // background-color: $White;
-  border-radius: 15px;
-  padding: 15px;
+  align-items: center;
 
   @include media-breakpoint-up(md) {
-    margin-left: 1rem; // Adds margin between sidebar and form on desktop
+    background: transparent;
+    display: flex;
+  flex-direction: column;
+
   }
 }
 
 footer {
-  // background-color: $White;
-  position: relative;
-  bottom: 0;
+  position: absolute;
   text-align: center;
-  padding: 0.5rem 0;
-  height: 10%;
+  bottom: 10px;
 
 
-  .navigation {
-    background: $White;
-    padding: 1rem;
-    @include flexSpaceBetween(row);
-
-  }
+  
 }
 
 .attribution a {
@@ -76,4 +91,16 @@ footer {
 .back-button {
   color: $Cool-gray;
   background-color: transparent;
+}
+
+.navigation {
+  background: $White;
+  padding: 1rem;
+  @include flexSpaceBetween(row);
+   
+  @include media-breakpoint-up(md) {
+    width: 85%;
+
+  }
+
 }
